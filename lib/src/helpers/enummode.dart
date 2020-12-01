@@ -1,0 +1,1 @@
+enum AuthyMode{SINGUP, LOGIN}
