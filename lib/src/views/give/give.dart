@@ -52,7 +52,7 @@ class _GiveState extends State<Give> {
           ),
           backgroundColor: blueblack,
           leading: IconButton(
-              icon: Image.asset("assets/icons/drawer_icon.png"),
+              icon: Image.asset("Assets/icons/drawer.png"),
               onPressed: () {
                 _scaffoldlKey.currentState.openDrawer();
               })),
@@ -425,7 +425,7 @@ class _GiveState extends State<Give> {
       formState.save();
       Charge charge = Charge()
         ..amount = _amountToDonate // In base currency
-        ..email = _email
+        ..email = 'jjjjjjj@gmail.com'
         ..card = _getCardFromUI();
 
       print(_email);

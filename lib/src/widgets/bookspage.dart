@@ -1,4 +1,5 @@
 
+import 'package:churchexpress/src/helpers/images.dart';
 import 'package:churchexpress/src/helpers/style.dart';
 import 'package:churchexpress/src/views/books/booksview.dart';
 import 'package:churchexpress/src/widgets/appbar.dart';
@@ -24,7 +25,7 @@ class BooksPage extends StatelessWidget {
         },
               child: Container(
           padding:
-              const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
+              const EdgeInsets.only(left: 10, right: 20, top:10, bottom: 10),
           decoration: BoxDecoration(
             border: Border.all(color: Colors.grey),
             borderRadius: BorderRadius.circular(10),
@@ -34,8 +35,10 @@ class BooksPage extends StatelessWidget {
             children: [
               Container(
                   padding: const EdgeInsets.symmetric(vertical: 10),
-                  height: 100,
-                  child: bannerImage('Assets/images/splashimage.png')),
+                  width: SizeConfig.xMargin(context, 26),
+                  height: SizeConfig.yMargin(context, 20),
+                  child: bannerImage(book)),
+                  SizedBox(width:  SizeConfig.xMargin(context, 3),),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [

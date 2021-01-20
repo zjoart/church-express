@@ -1,5 +1,5 @@
 import 'dart:convert';
-
+import 'package:churchexpress/src/helpers/images.dart';
 
 import 'package:churchexpress/src/helpers/colorfonts.dart';
 import 'package:churchexpress/src/helpers/style.dart';
@@ -292,7 +292,7 @@ class _VideoListPageState extends State<VideoListPage> {
         body: Column(
           children: <Widget>[
             Container(
-               child: Image.asset('Assets/images/banner.png'),),
+               child: Image.asset(banner),),
             _noOfVids == 0 ? SizedBox.shrink() :
             FutureBuilder(
                 future: theVideos,

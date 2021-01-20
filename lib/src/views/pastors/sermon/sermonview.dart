@@ -3,7 +3,7 @@ import 'package:churchexpress/src/helpers/style.dart';
 import 'package:churchexpress/src/widgets/appbar.dart';
 import 'package:flutter/material.dart';
 import 'package:churchexpress/src/helpers/responsive.dart';
-
+import 'package:churchexpress/src/helpers/images.dart';
 class SermonView extends StatefulWidget {
   SermonView({this.title});
   final String title;
@@ -26,7 +26,7 @@ class _SermonViewState extends State<SermonView> {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          bannerImage('Assets/images/banner.png'),
+          bannerImage(great),
           style.ySpace(6),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 25),
@@ -74,29 +74,29 @@ class _SermonViewState extends State<SermonView> {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 25),
             child: Container(
-                padding: const EdgeInsets.symmetric(horizontal: 2),
-                height: 53,
+                padding: const EdgeInsets.symmetric(horizontal: 15),
+          height: SizeConfig.yMargin(context, 6),
                 decoration: BoxDecoration(
                     color: Colors.grey,
                     borderRadius: BorderRadius.circular(10)),
                 alignment: Alignment.center,
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Icon(Icons.headset),
-                    SizedBox(width: 5),
-                    Text('Listen',
-                        style: nstyle.copyWith(
-                            fontSize: SizeConfig.textSize(context, 4.5))),
-                    style.xSpace(9),
+                   Container(),
+                        Container(),
                     Row(
-                 mainAxisAlignment: MainAxisAlignment.end,
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                         style.xSpace(0.01),
-                        Icon(Icons.download_sharp),
-                       
+                        Icon(Icons.headset),
+                        SizedBox(width: 5),
+                        Text('Listen',
+                            style: nstyle.copyWith(
+                                fontSize: SizeConfig.textSize(context, 4.5))),
+                        style.xSpace(9),
                       ],
-                    )
+                    ),
+                        Icon(Icons.download_sharp)
                   ],
                 )),
           ),
@@ -104,7 +104,7 @@ class _SermonViewState extends State<SermonView> {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 25),
             child: Container(
-              height: 53,
+              height: SizeConfig.yMargin(context, 6),
               width: MediaQuery.of(context).size.width,
               alignment: Alignment.center,
               decoration: BoxDecoration(

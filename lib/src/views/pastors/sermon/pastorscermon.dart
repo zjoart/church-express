@@ -1,13 +1,12 @@
-import 'package:churchexpress/src/helpers/colorfonts.dart';
+
 import 'package:churchexpress/src/helpers/style.dart';
-import 'package:churchexpress/src/views/pastors/pastormessageview.dart';
-import 'package:churchexpress/src/views/pastors/pastorqouteview.dart';
+
 import 'package:churchexpress/src/views/pastors/sermon/sermonview.dart';
 import 'package:churchexpress/src/widgets/appbar.dart';
 import 'package:churchexpress/src/widgets/drawer.dart';
 import 'package:churchexpress/src/widgets/pastorswordstile.dart';
 import 'package:flutter/material.dart';
-import 'package:churchexpress/src/helpers/responsive.dart';
+import 'package:churchexpress/src/helpers/images.dart';
 
 class PastorSermon extends StatefulWidget {
   @override
@@ -29,7 +28,7 @@ class _PastorSermonState extends State<PastorSermon> {
         physics: BouncingScrollPhysics(),
         child: Column(
           children: [
-            bannerImage('Assets/images/banner.png'),
+            bannerImage(banner),
             style.ySpace(6),
             PastorsWordsTile(
               press: () {

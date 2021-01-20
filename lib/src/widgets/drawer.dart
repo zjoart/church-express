@@ -1,6 +1,9 @@
+import 'package:churchexpress/src/helpers/enummode.dart';
 import 'package:churchexpress/src/helpers/style.dart';
+import 'package:churchexpress/src/views/Authy/authyhome.dart';
 import 'package:churchexpress/src/views/bible/offline_bible/books_page.dart';
 import 'package:churchexpress/src/views/books/bookshome.dart';
+import 'package:churchexpress/src/views/contact.dart';
 import 'package:churchexpress/src/views/give/give.dart';
 import 'package:churchexpress/src/views/hustle/hustle_list.dart';
 import 'package:churchexpress/src/views/note/notes_list_page.dart';
@@ -22,13 +25,20 @@ class LoginDrawer extends StatelessWidget {
           style.ySpace(5),
           drawerHeader(context),
           style.ySpace(2.6),
-          DrawerTiles(
-            text: 'Weekly sermon',
-            press: () { Navigator.of(context).pop();
+        ListTile(
+      leading: FaIcon(
+            FontAwesomeIcons.calendarWeek,
+        size: SizeConfig.textSize(context, 5.8)
+          ), 
+      title: Text(
+       'Weekly sermon',
+        style: nstyle.copyWith(
+            color: Colors.black, fontSize: SizeConfig.textSize(context, 3.8)),
+      ),
+      onTap: () { Navigator.of(context).pop();
               goTo(context, PastorSermon());
             },
-            icon: Icons.wrap_text_outlined,
-          ),
+    ),
           DrawerTiles(
             text: 'Pastor corner',
             press: () {
@@ -58,13 +68,19 @@ class LoginDrawer extends StatelessWidget {
                 Navigator.of(context).pop(); 
                 goTo(context,Notes());}, icon: Icons.notes),
           DrawerTiles(
-              text: 'Contact us', press: () {}, icon: Icons.support_agent),
+              text: 'Contact us', press: () { Navigator.of(context).pop(); 
+                goTo(context,ContactPage());}, icon: Icons.support_agent),
           DrawerTiles(
             text: 'Settings',
             press: () {},
             icon: Icons.settings,
           ),
-          DrawerTiles(text: 'Sign out', press: () {}, icon: Icons.exit_to_app),
+          DrawerTiles(text: 'Sign out', press: () {
+             Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (BuildContext context) =>AuthHome(mode: AuthyMode.LOGIN)));
+          }, icon: Icons.exit_to_app),
            Expanded(
                         child: Align(
     alignment: AlignmentDirectional.bottomCenter,child: socialMedia()),
@@ -169,11 +185,11 @@ class DrawerTiles extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      leading: Icon(icon, size: SizeConfig.textSize(context, 7)),
+      leading: Icon(icon, size: SizeConfig.textSize(context, 5.8)),
       title: Text(
         text,
         style: nstyle.copyWith(
-            color: Colors.black, fontSize: SizeConfig.textSize(context, 4.5)),
+            color: Colors.black, fontSize: SizeConfig.textSize(context, 3.8)),
       ),
       onTap: press,
     );

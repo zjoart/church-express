@@ -3,6 +3,7 @@ import 'package:churchexpress/src/helpers/style.dart';
 import 'package:churchexpress/src/widgets/appbar.dart';
 import 'package:flutter/material.dart';
 import 'package:churchexpress/src/helpers/responsive.dart';
+import 'package:churchexpress/src/helpers/images.dart';
 
 class FullMessageView extends StatefulWidget {
   FullMessageView({this.title});
@@ -18,18 +19,20 @@ class _FullMessageViewState extends State<FullMessageView> {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title,
-            style: nstyle.copyWith(fontSize: SizeConfig.textSize(context, 5), color: Colors.white)),
+            style: nstyle.copyWith(
+                fontSize: SizeConfig.textSize(context, 5),
+                color: Colors.white)),
         backgroundColor: blueblack,
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          bannerImage('Assets/images/banner.png'),
+          bannerImage(great),
           style.ySpace(6),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 25),
             child: Row(
-             // crossAxisAlignment: CrossAxisAlignment.start,
+              // crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Column(
@@ -37,21 +40,27 @@ class _FullMessageViewState extends State<FullMessageView> {
                   children: [
                     Text(
                       widget.title,
-                      style: nstyle.copyWith(fontSize: SizeConfig.textSize(context, 5)),
+                      style: nstyle.copyWith(
+                          fontSize: SizeConfig.textSize(context, 5)),
                     ),
                     SizedBox(height: 10),
-                     Text(
+                    Text(
                       "Pastor's Taiwo Oyewole",
-                      style: nstyle.copyWith(fontSize: SizeConfig.textSize(context, 4)),
+                      style: nstyle.copyWith(
+                          fontSize: SizeConfig.textSize(context, 4)),
                     ),
-                      SizedBox(height: 10),
-                     Text(
+                    SizedBox(height: 10),
+                    Text(
                       '07 - 10 - 2019',
-                      style: nstyle.copyWith(fontSize: SizeConfig.textSize(context, 3.5)),
+                      style: nstyle.copyWith(
+                          fontSize: SizeConfig.textSize(context, 3.5)),
                     ),
                   ],
                 ),
-                Icon(Icons.share, size: 30,)
+                Icon(
+                  Icons.share,
+                  size: 30,
+                )
               ],
             ),
           ),
@@ -59,23 +68,31 @@ class _FullMessageViewState extends State<FullMessageView> {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 25),
             child: Container(
-              padding:  const EdgeInsets.symmetric(horizontal: 2),
-              height: 53,
-              decoration: BoxDecoration(color: Colors.grey,
-              borderRadius: BorderRadius.circular(10)
-              ),
-              alignment: Alignment.center,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Icon(Icons.headset),
-                  SizedBox(width: 5),
-                  Text('Listen', style: nstyle.copyWith(fontSize: SizeConfig.textSize(context,4.5))),
-      style.xSpace(9),
-                  Icon(Icons.download_sharp)
-                ],
-              )
-            ),
+                padding: const EdgeInsets.symmetric(horizontal: 15),
+             height: SizeConfig.yMargin(context, 6),
+                decoration: BoxDecoration(
+                    color: Colors.grey,
+                    borderRadius: BorderRadius.circular(10)),
+                alignment: Alignment.center,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Container(),
+                        Container(),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(Icons.headset),
+                        SizedBox(width: 5),
+                        Text('Listen',
+                            style: nstyle.copyWith(
+                                fontSize: SizeConfig.textSize(context, 4.5))),
+                        style.xSpace(9),
+                      ],
+                    ),
+                    Icon(Icons.download_sharp)
+                  ],
+                )),
           )
         ],
       ),

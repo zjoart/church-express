@@ -3,6 +3,7 @@ import 'package:churchexpress/src/widgets/appbar.dart';
 import 'package:churchexpress/src/widgets/drawer.dart';
 import 'package:churchexpress/src/widgets/welcometiles.dart';
 import 'package:flutter/material.dart';
+import 'package:churchexpress/src/helpers/images.dart';
 
 class WelcomeView extends StatelessWidget {
   WelcomeView({this.mode});
@@ -20,7 +21,7 @@ class WelcomeView extends StatelessWidget {
             child: Column(
             children: [
               Container(
-                  child: Image.asset('Assets/images/homeheader.png')
+                  child: Image.asset(homeheader, fit:BoxFit.fitWidth )
                 ),
 Container(
   child: BodyTile(width: width,),

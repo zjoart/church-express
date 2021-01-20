@@ -3,8 +3,7 @@ import 'package:churchexpress/src/widgets/appbar.dart';
 import 'package:churchexpress/src/widgets/bookspage.dart';
 import 'package:churchexpress/src/widgets/drawer.dart';
 import 'package:flutter/material.dart';
-import 'package:churchexpress/src/helpers/responsive.dart';
-
+import 'package:churchexpress/src/helpers/images.dart';
 class BooksHome extends StatefulWidget {
   @override
   _BooksHomeState createState() => _BooksHomeState();
@@ -23,14 +22,14 @@ class _BooksHomeState extends State<BooksHome> {
         drawer: LoginDrawer(),
         body: SingleChildScrollView(
           physics: BouncingScrollPhysics(),
-                  child: Column(
+          child: Column(
             children: [
-              bannerImage('Assets/images/banner.png'),
+              bannerImage(banner),
               style.ySpace(6),
               BooksPage(style: style),
-                 BooksPage(style: style),
-                    BooksPage(style: style),
-                       BooksPage(style: style)
+              BooksPage(style: style),
+              BooksPage(style: style),
+              BooksPage(style: style),
             ],
           ),
         ));

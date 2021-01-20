@@ -23,7 +23,7 @@ class _AuthyModeScreenState extends State<AuthyModeScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        body: widget.mode == AuthyMode.LOGIN ? AuthyConfirm() : Register(),
+        body: widget.mode == AuthyMode.SINGUP ? Register() : AuthyConfirm(),
       ),
     );
   }

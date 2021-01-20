@@ -4,6 +4,7 @@ import 'package:churchexpress/src/widgets/appbar.dart';
 
 import 'package:flutter/material.dart';
 import 'package:churchexpress/src/helpers/responsive.dart';
+import 'package:churchexpress/src/helpers/images.dart';
 
 class PastorsWordsTile extends StatelessWidget {
   const PastorsWordsTile({
@@ -27,8 +28,9 @@ class PastorsWordsTile extends StatelessWidget {
             children: [
               Container(
                 padding: const EdgeInsets.symmetric(vertical: 10),
+                width: SizeConfig.xMargin(context, 15),
                 height: 100,
-                child: bannerImage('Assets/images/splashimage.png')),
+                child: bannerImage(message)),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [

@@ -3,10 +3,8 @@ import 'package:churchexpress/src/helpers/enummode.dart';
 import 'package:churchexpress/src/views/Livestream/video_list_page.dart';
 import 'package:churchexpress/src/views/bible/offline_bible/books_page.dart';
 import 'package:churchexpress/src/views/bible/online_bible/books_page.dart';
-import 'package:churchexpress/src/views/note/notes_list_page.dart';
+import 'package:churchexpress/src/views/location/location.dart';
 import 'package:churchexpress/src/views/welcome/homepages.dart';
-import 'package:churchexpress/src/widgets/appbar.dart';
-import 'package:churchexpress/src/widgets/drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -17,7 +15,7 @@ class LoginHome extends StatefulWidget {
 
 class _LoginHomeState extends State<LoginHome> {
 
-  int _index  = 0;
+  int _index  = 0; 
   @override
   Widget build(BuildContext context) {
     Widget child;
@@ -29,10 +27,10 @@ class _LoginHomeState extends State<LoginHome> {
         child = VideoListPage();
         break;
       case 2:
-        child = BookPage();
+        child = LocationHome();
         break;
       case 3:
-        child = NewBooksPage();
+        child = BookPage();
         break;
     }
     return Scaffold(

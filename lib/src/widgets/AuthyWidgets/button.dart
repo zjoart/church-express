@@ -17,7 +17,7 @@ class Button extends StatelessWidget {
         onTap: press,
         child: Container(
             width: width,
-            height: SizeConfig.yMargin(context, 6.5),
+            height: SizeConfig.yMargin(context, 6),
             decoration: BoxDecoration(
                 borderRadius: BorderRadiusDirectional.circular(10),
                 color: yellow),
@@ -25,7 +25,7 @@ class Button extends StatelessWidget {
             child: Text(text,
                 style: nstyle.copyWith(
                     color: blueblack,
-                    fontSize: SizeConfig.textSize(context, 6)))),
+                    fontSize: SizeConfig.textSize(context, 5)))),
       ),
     );
   }

@@ -1,4 +1,7 @@
+import 'package:churchexpress/src/helpers/enummode.dart';
+import 'package:churchexpress/src/helpers/images.dart';
 import 'package:churchexpress/src/helpers/style.dart';
+import 'package:churchexpress/src/viewmodels/shared.dart';
 import 'package:churchexpress/src/views/welcome/home.dart';
 import 'package:churchexpress/src/widgets/AuthyWidgets/button.dart';
 import 'package:flutter/material.dart';
@@ -12,7 +15,7 @@ class Success extends StatefulWidget {
 class _SuccessState extends State<Success> {
   @override
   Widget build(BuildContext context) {
-    double width = MediaQuery.of(context).size.width;
+    double width = MediaQuery.of(context).size.width; 
     Style style = Style(context);
     return SafeArea(
       child: Scaffold(
@@ -46,8 +49,8 @@ class _SuccessState extends State<Success> {
                       style.ySpace(5),
                       CircleAvatar(
                         backgroundColor: Colors.green,
-                        minRadius: 50,
-                        child: Icon(Icons.done_sharp, size: 50,color: Colors.white,),
+                        minRadius: 40,
+                        child: Image.asset(done)
                       ),
                        style.ySpace(2),
                       Text(
@@ -57,12 +60,15 @@ class _SuccessState extends State<Success> {
                             fontWeight: FontWeight.w700),
                       ),
                        style.ySpace(2),
-                      Text(
-                        'Thanks for submitting your details. We are working on creating your profile and will get back to you soon. Thank you!',
-                        style: nstyle.copyWith(
-                            fontSize: SizeConfig.textSize(context, 5),
-                            fontWeight: FontWeight.w500,
-                            color: Colors.black54),
+                      Container(
+                        width: SizeConfig.xMargin(context, 75),
+                        child: Text(
+                          'Thanks for submitting your details. We are working on creating your profile and will get back to you soon. Thank you!',
+                          style: nstyle.copyWith(
+                              fontSize: SizeConfig.textSize(context, 5),
+                              fontWeight: FontWeight.w500,
+                              color: Colors.black54),
+                        ),
                       ),
                        style.ySpace(5),
                     ],
@@ -79,9 +85,12 @@ class _SuccessState extends State<Success> {
     );
   }
   goTo(){
-     Navigator.push(
+   Shared().setmode(true).then((value) => {
+       Navigator.push(
                 context,
                 MaterialPageRoute(
-                    builder: (BuildContext context) => HomeScreen()));
+                    builder: (BuildContext context) => HomeScreen(mode: AuthyMode.SINGUP,)))
+   });
+   
   }
 }

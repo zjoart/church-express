@@ -7,6 +7,7 @@ import 'package:churchexpress/src/widgets/drawer.dart';
 import 'package:churchexpress/src/widgets/pastorswordstile.dart';
 import 'package:flutter/material.dart';
 import 'package:churchexpress/src/helpers/responsive.dart';
+import 'package:churchexpress/src/helpers/images.dart';
 
 class Pastorscorner extends StatelessWidget {
   final GlobalKey<ScaffoldState> _sKey = new GlobalKey();
@@ -21,7 +22,7 @@ class Pastorscorner extends StatelessWidget {
       drawer: LoginDrawer(),
       body: Column(
         children: [
-          bannerImage('Assets/images/banner.png'),
+          bannerImage(banner),
           style.ySpace(7),
           cornerTile(context, Icons.mail, 'Pastors message', () {
             goTo(context, PastorsMessage());
@@ -88,7 +89,7 @@ class _PastorsMessageState extends State<PastorsMessage> {
         physics: BouncingScrollPhysics(),
         child: Column(
           children: [
-            bannerImage('Assets/images/banner.png'),
+            bannerImage(banner),
             style.ySpace(6),
             PastorsWordsTile(
               press: () {
@@ -152,9 +153,9 @@ class _PatorsQouteState extends State<PatorsQoute> {
           qouteTile(context, 'Happy'),
           qouteTile(context, 'Excited'),
           qouteTile(context, 'Happy'),
+          qouteTile(context, 'Sad'),
           qouteTile(context, 'Happy'),
-          qouteTile(context, 'Happy'),
-          qouteTile(context, 'Happy')
+          qouteTile(context, 'Lonely')
         ],
       ),
     );
@@ -165,7 +166,7 @@ class _PatorsQouteState extends State<PatorsQoute> {
       padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 10),
       child: GestureDetector(
         onTap: (){
-          goTo(context, QouteView());
+          goTo(context, QouteView(title: text,));
         },
               child: Container(
             padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
@@ -175,8 +176,9 @@ class _PatorsQouteState extends State<PatorsQoute> {
             alignment: Alignment.center,
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
+                Container(),
                 Text(
                   text,
                   style: nstyle.copyWith(

@@ -3,8 +3,10 @@ import 'package:churchexpress/src/helpers/style.dart';
 import 'package:churchexpress/src/widgets/appbar.dart';
 import 'package:flutter/material.dart';
 import 'package:churchexpress/src/helpers/responsive.dart';
-
+import 'package:churchexpress/src/helpers/images.dart';
 class QouteView extends StatefulWidget {
+  QouteView({this.title});
+  final String title;
   @override
   _QouteViewState createState() => _QouteViewState();
 }
@@ -16,7 +18,7 @@ class _QouteViewState extends State<QouteView> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "Pastor's Quote",
+          widget.title,
           style: nstyle.copyWith(
             color: Colors.white,
             fontSize: SizeConfig.textSize(context, 5),
@@ -26,7 +28,7 @@ class _QouteViewState extends State<QouteView> {
       ),
       body: Column(
         children: [
-          bannerImage('Assets/images/banner.png'),
+          bannerImage(banner),
           style.ySpace(6),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 25),
